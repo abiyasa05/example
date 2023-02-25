@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +22,6 @@ Route::get('/hello', function () {
     return 'Hello';
 });
 
-Route::get('/world', [WelcomeController::class,'world']);
-
 Route::get('/mahasiswa/{id}', function ($id) {
     return "Mahasiswa Dengan ID ke $id";
 })->where('id', '[0-9]+');
@@ -30,3 +29,5 @@ Route::get('/mahasiswa/{id}', function ($id) {
 Route::get('/mahasiswa/{id}/{nama}', function ($id, $nama) {
     return "Mahasiswa Dengan ID ke $id & Nama $nama";
 })->where(['id'=>'[0-9]+','nama'=>'[A-Za-z]+']);
+
+Route::get('/hello',[WelcomeController::class]);
