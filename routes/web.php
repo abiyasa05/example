@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/hello', function () {
     return 'Hello';
 });
+
+Route::get('/world', [WelcomeController::class,'world']);
